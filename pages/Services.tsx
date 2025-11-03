@@ -1,22 +1,28 @@
 import React from 'react';
-import { ServicesContent } from '../types';
+import { ServicesContent, Service } from '../types';
 import Section, { useAnimateOnScroll } from '../components/Section';
 import { CheckIcon } from '../components/icons/Icons';
+import { useServiceImages } from '../hooks/useServiceImages';
 
 interface ServicesProps {
   content: ServicesContent;
 }
 
-const ServiceCard: React.FC<{ service: ServicesContent['services'][0], index: number }> = ({ service, index }) => {
+const ServiceCard: React.FC<{ service: Service, index: number }> = ({ service, index }) => {
     const [ref, isVisible] = useAnimateOnScroll<HTMLDivElement>();
+    const { serviceImages } = useServiceImages();
+    
+    const imageSrc = serviceImages[service.key] || `https://picsum.photos/400/400?image=3${index}`;
+
     const slideFromClass = index % 2 === 0 ? '-translate-x-10' : 'translate-x-10';
     return (
         <div 
             ref={ref} 
             className={`bg-white p-8 rounded-lg shadow-lg border border-gray-200 flex flex-col md:flex-row gap-8 items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${slideFromClass}`}`}
+            style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
         >
             <div className="flex-shrink-0">
-                <img src={`https://picsum.photos/400/400?image=3${index}`} alt={service.title} className="w-full md:w-64 h-64 object-cover rounded-lg"/>
+                <img src={imageSrc} alt={service.title} className="w-full md:w-64 h-64 object-cover rounded-lg"/>
             </div>
             <div className="flex-grow">
                 <h2 className="text-3xl font-bold text-blue-900 mb-4">{service.title}</h2>
@@ -46,7 +52,7 @@ const Services: React.FC<ServicesProps> = ({ content }) => {
       <Section>
         <div className="max-w-5xl mx-auto space-y-12">
           {content.services.map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} />
+            <ServiceCard key={service.key} service={service} index={index} />
           ))}
         </div>
       </Section>

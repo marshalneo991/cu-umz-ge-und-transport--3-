@@ -28,8 +28,7 @@ const App: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        // Fix: Passed galleryContent prop to Home component to provide necessary image data.
-        return <Home content={currentContent.home} galleryContent={currentContent.gallery} onNavigate={handleSetPage} />;
+        return <Home content={currentContent.home} galleryContent={currentContent.gallery} reviewsContent={currentContent.home.reviews} onNavigate={handleSetPage} />;
       case 'about':
         return <About content={currentContent.about} />;
       case 'services':
@@ -44,8 +43,7 @@ const App: React.FC = () => {
         // Protected Route: Only render Admin page if isAdmin is true
         return isAdmin ? <Admin content={currentContent.admin} /> : <Login content={currentContent.login} onNavigate={handleSetPage} />;
       default:
-        // Fix: Passed galleryContent prop to Home component to provide necessary image data.
-        return <Home content={currentContent.home} galleryContent={currentContent.gallery} onNavigate={handleSetPage} />;
+        return <Home content={currentContent.home} galleryContent={currentContent.gallery} reviewsContent={currentContent.home.reviews} onNavigate={handleSetPage} />;
     }
   };
 

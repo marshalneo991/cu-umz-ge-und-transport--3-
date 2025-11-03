@@ -30,5 +30,14 @@ export const useHeroImage = () => {
     }
   }, []);
 
-  return { heroImage, updateHeroImage };
+  const resetHeroImage = useCallback(() => {
+    try {
+      localStorage.setItem(HERO_IMAGE_STORAGE_KEY, DEFAULT_HERO_IMAGE);
+      setHeroImage(DEFAULT_HERO_IMAGE);
+    } catch (error) {
+        console.error("Failed to reset hero image in localStorage:", error);
+    }
+  }, []);
+
+  return { heroImage, updateHeroImage, resetHeroImage };
 };

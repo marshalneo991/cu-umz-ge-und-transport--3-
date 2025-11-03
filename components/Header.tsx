@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ content, language, setLanguage, current
     <header className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-2xl font-extrabold text-blue-900 cursor-pointer" onClick={() => onNavigate('home')}>
-          CU<span className="text-orange-500">Umzüge</span>
+          CU <span className="text-orange-500">Umzüge</span>
         </div>
         
         <nav className="hidden lg:flex items-center space-x-8">
