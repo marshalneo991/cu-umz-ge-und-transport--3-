@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ContactContent } from '../types';
 import Section, { useAnimateOnScroll } from '../components/Section';
 import { PhoneIcon, MailIcon, WhatsappIcon, LocationIcon } from '../components/icons/Icons';
@@ -8,7 +8,15 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ content }) => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formRef, isFormVisible] = useAnimateOnScroll<HTMLDivElement>();
   const [detailsRef, isDetailsVisible] = useAnimateOnScroll<HTMLDivElement>();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // In a real app, you would handle form submission here
+    setFormSubmitted(true);
+  };
 
   return (
     <>
@@ -19,13 +27,51 @@ const Contact: React.FC<ContactProps> = ({ content }) => {
         </div>
       </div>
       <Section>
-        <div className="max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <div 
+            ref={formRef} 
+            className="bg-white p-8 rounded-lg shadow-lg border border-gray-200"
+          >
+            {formSubmitted ? (
+              <div className="flex flex-col items-center justify-center h-full text-center">
+                <h3 className="text-2xl font-bold text-green-600">{content.form.success}</h3>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className={`transition-all duration-500 ease-out ${isFormVisible ? 'opacity-100 translate-y-0 delay-100' : 'opacity-0 translate-y-4'}`}>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">{content.form.name}</label>
+                    <input type="text" id="name" required className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 bg-white" />
+                  </div>
+                  <div className={`transition-all duration-500 ease-out ${isFormVisible ? 'opacity-100 translate-y-0 delay-200' : 'opacity-0 translate-y-4'}`}>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">{content.form.email}</label>
+                    <input type="email" id="email" required className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 bg-white" />
+                  </div>
+                </div>
+                <div className={`mt-6 transition-all duration-500 ease-out ${isFormVisible ? 'opacity-100 translate-y-0 delay-300' : 'opacity-0 translate-y-4'}`}>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">{content.form.phone}</label>
+                  <input type="tel" id="phone" className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 bg-white" />
+                </div>
+                <div className={`mt-6 transition-all duration-500 ease-out ${isFormVisible ? 'opacity-100 translate-y-0 delay-400' : 'opacity-0 translate-y-4'}`}>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">{content.form.message}</label>
+                  <textarea id="message" rows={5} required className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 bg-white"></textarea>
+                </div>
+                <div className={`mt-8 transition-all duration-500 ease-out ${isFormVisible ? 'opacity-100 translate-y-0 delay-500' : 'opacity-0 translate-y-4'}`}>
+                  <button type="submit" className="w-full bg-orange-500 text-white font-semibold px-6 py-3 rounded-md hover:bg-orange-600 transition-all duration-300 text-lg transform hover:scale-105 hover:shadow-lg active:scale-95">
+                    {content.form.submit}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+
           {/* Contact Details & CTAs */}
           <div 
             ref={detailsRef}
             className={`space-y-8 transition-all duration-700 ease-out delay-200 ${isDetailsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
           >
-            <div className="bg-blue-50 p-8 rounded-lg shadow-lg border border-gray-200">
+            <div className="bg-blue-50 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-blue-900 mb-4">{content.details.title}</h3>
               <ul className="space-y-4 text-gray-700">
                 <li className="flex items-start"><LocationIcon className="h-6 w-6 text-orange-500 mr-4 mt-1 flex-shrink-0" /><span>{content.details.address}</span></li>

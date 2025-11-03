@@ -1,7 +1,6 @@
 import React from 'react';
 // Fix: Updated import for Page to point to the centralized types.ts file.
 import { FooterContent, Page } from '../types';
-import { PhoneIcon, MailIcon, LocationIcon } from './icons/Icons';
 
 interface FooterProps {
   content: FooterContent;
@@ -16,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ content, onNavigate }) => {
           {/* Company Info */}
           <div className="md:col-span-2 lg:col-span-1">
             <h3 className="text-2xl font-extrabold">
-              CU <span className="text-orange-500">Umzüge</span>
+              CU<span className="text-orange-500">Umzüge</span>
             </h3>
             <p className="mt-4 text-blue-200">{content.company.description}</p>
           </div>
@@ -41,9 +40,8 @@ const Footer: React.FC<FooterProps> = ({ content, onNavigate }) => {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold uppercase tracking-wider">{content.contact.title}</h4>
-            <ul className="mt-4 space-y-3 text-blue-200">
-              <li className="flex items-start">
-                <LocationIcon className="h-5 w-5 text-orange-400 mr-3 mt-1 flex-shrink-0" />
+            <ul className="mt-4 space-y-2 text-blue-200">
+              <li>
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(content.contact.address)}`}
                   target="_blank"
@@ -53,8 +51,7 @@ const Footer: React.FC<FooterProps> = ({ content, onNavigate }) => {
                   {content.contact.address}
                 </a>
               </li>
-              <li className="flex items-center">
-                <PhoneIcon className="h-5 w-5 text-orange-400 mr-3 flex-shrink-0" />
+              <li>
                 <a
                   href={`tel:${content.contact.phone.replace(/\s/g, '')}`}
                   className="hover:text-white hover:underline transition-colors duration-200"
@@ -62,8 +59,7 @@ const Footer: React.FC<FooterProps> = ({ content, onNavigate }) => {
                   {content.contact.phone}
                 </a>
               </li>
-              <li className="flex items-center">
-                <MailIcon className="h-5 w-5 text-orange-400 mr-3 flex-shrink-0" />
+              <li>
                 <a
                   href={`mailto:${content.contact.email}`}
                   className="hover:text-white hover:underline transition-colors duration-200"

@@ -47,18 +47,10 @@ export const content: AllContent = {
       },
       reviews: {
         title: 'Was unsere Kunden sagen',
-        addReviewTitle: 'Bewertung abgeben',
-        form: {
-          name: 'Ihr Name',
-          review: 'Ihre Bewertung',
-          rating: 'Ihre Sterne',
-          submit: 'Bewertung absenden',
-          success: 'Vielen Dank für Ihre Bewertung!'
-        },
         items: [
-          { quote: 'Der Umzug war super organisiert und ging blitzschnell. Das Team war sehr freundlich und professionell. Absolut empfehlenswert!', author: 'Anna S.', rating: 5 },
-          { quote: 'Vom ersten Kontakt bis zum letzten Karton alles top. Faire Preise und ein super Service. Jederzeit wieder!', author: 'Markus T.', rating: 5 },
-          { quote: 'CU Umzüge hat unseren Büroumzug am Wochenende gemeistert. Alles lief nach Plan. Vielen Dank!', author: 'Global Tech GmbH', rating: 5 },
+          { quote: 'Der Umzug war super organisiert und ging blitzschnell. Das Team war sehr freundlich und professionell. Absolut empfehlenswert!', author: 'Anna S.' },
+          { quote: 'Vom ersten Kontakt bis zum letzten Karton alles top. Faire Preise und ein super Service. Jederzeit wieder!', author: 'Markus T.' },
+          { quote: 'CU Umzüge hat unseren Büroumzug am Wochenende gemeistert. Alles lief nach Plan. Vielen Dank!', author: 'Global Tech GmbH' },
         ],
       },
       gallery: {
@@ -91,18 +83,18 @@ export const content: AllContent = {
       ],
       teamTitle: 'Unser Team',
       teamMembers: [
-        { key: 'ivan-curcic', name: 'Ivan Curcic', role: 'Gründer & Geschäftsführer', src: 'https://picsum.photos/200/200?image=20' },
-        { key: 'team', name: 'Team von Fachleuten', role: 'Erfahrene Umzugshelfer', src: 'https://picsum.photos/200/200?image=21' },
+        { name: 'Ivan Curcic', role: 'Gründer & Geschäftsführer' },
+        { name: 'Team von Fachleuten', role: 'Erfahrene Umzugshelfer' },
       ],
     },
     services: {
       title: 'Unsere Dienstleistungen',
       intro: 'Wir bieten eine umfassende Palette von Umzugsdienstleistungen, die auf Ihre individuellen Bedürfnisse zugeschnitten sind. Egal ob kleiner Privatumzug oder großer Firmenumzug, wir haben die richtige Lösung für Sie.',
       services: [
-        { key: 'private', title: 'Privatumzüge', description: 'Wir kümmern uns um den kompletten Umzug Ihrer Wohnung oder Ihres Hauses. Von der Planung über das Verpacken bis zum Aufbau Ihrer Möbel am Zielort.', features: ['Kostenlose Besichtigung & Angebot', 'Ein- und Auspackservice', 'Möbelde- und -montage', 'Küchenmontage'] },
-        { key: 'business', title: 'Firmenumzüge', description: 'Effiziente und professionelle Umzüge für Büros und Unternehmen jeder Größe. Wir minimieren die Ausfallzeiten, damit Ihr Geschäft reibungslos weiterlaufen kann.', features: ['Detaillierte Umzugsplanung', 'IT- und Akten-Transport', 'Möbelentsorgung', 'Wochenend- und Nachtumzüge'] },
-        { key: 'transport', title: 'Möbeltransport & Beiladung', description: 'Sie haben nur wenige Möbelstücke zu transportieren? Kein Problem! Wir bieten kostengünstige Lösungen für Einzeltransporte und Beiladungen.', features: ['Sicherer Transport von Einzelstücken', 'Flexible Terminvereinbarung', 'Versicherter Transport', 'Deutschland- & europaweit'] },
-        { key: 'disposal', title: 'Entrümpelung & Entsorgung', description: 'Wir schaffen Platz! Professionelle Entrümpelung von Kellern, Dachböden oder ganzen Wohnungen mit fachgerechter Entsorgung.', features: ['Besenreine Übergabe', 'Wertanrechnung möglich', 'Umweltgerechte Entsorgung', 'Diskret und zuverlässig'] },
+        { title: 'Privatumzüge', description: 'Wir kümmern uns um den kompletten Umzug Ihrer Wohnung oder Ihres Hauses. Von der Planung über das Verpacken bis zum Aufbau Ihrer Möbel am Zielort.', features: ['Kostenlose Besichtigung & Angebot', 'Ein- und Auspackservice', 'Möbelde- und -montage', 'Küchenmontage'] },
+        { title: 'Firmenumzüge', description: 'Effiziente und professionelle Umzüge für Büros und Unternehmen jeder Größe. Wir minimieren die Ausfallzeiten, damit Ihr Geschäft reibungslos weiterlaufen kann.', features: ['Detaillierte Umzugsplanung', 'IT- und Akten-Transport', 'Möbelentsorgung', 'Wochenend- und Nachtumzüge'] },
+        { title: 'Möbeltransport & Beiladung', description: 'Sie haben nur wenige Möbelstücke zu transportieren? Kein Problem! Wir bieten kostengünstige Lösungen für Einzeltransporte und Beiladungen.', features: ['Sicherer Transport von Einzelstücken', 'Flexible Terminvereinbarung', 'Versicherter Transport', 'Deutschland- & europaweit'] },
+        { title: 'Entrümpelung & Entsorgung', description: 'Wir schaffen Platz! Professionelle Entrümpelung von Kellern, Dachböden oder ganzen Wohnungen mit fachgerechter Entsorgung.', features: ['Besenreine Übergabe', 'Wertanrechnung möglich', 'Umweltgerechte Entsorgung', 'Diskret und zuverlässig'] },
       ],
     },
     gallery: {
@@ -122,7 +114,7 @@ export const content: AllContent = {
     },
     contact: {
       title: 'Kontaktieren Sie uns',
-      description: 'Haben Sie Fragen oder möchten Sie ein kostenloses Angebot? Kontaktieren Sie uns direkt über die untenstehenden Details oder rufen Sie uns an. Wir sind für Sie da!',
+      description: 'Haben Sie Fragen oder möchten Sie ein kostenloses Angebot? Füllen Sie das Formular aus oder rufen Sie uns an. Wir sind für Sie da!',
       form: {
         name: 'Ihr Name',
         email: 'Ihre E-Mail',
@@ -162,7 +154,7 @@ export const content: AllContent = {
         phone: '+49 123 456 7890',
         email: 'info@cu-umzuege.de',
       },
-      copyright: '© 2025 CU Umzüge und Transport. Alle Rechte vorbehalten.',
+      copyright: '© 2024 CU Umzüge und Transport. Alle Rechte vorbehalten.',
     },
     login: {
       title: 'Admin-Anmeldung',
@@ -178,27 +170,12 @@ export const content: AllContent = {
         title: 'Admin-Dashboard',
         heroManagement: {
             title: 'Startseiten-Bild Verwaltung',
+            uploadTitle: 'Neues Startseiten-Bild hochladen',
             currentImageTitle: 'Aktuelles Bild',
-            resetButton: 'Auf Standard zurücksetzen',
-            changeImage: 'Bild ändern'
-        },
-        serviceImageManagement: {
-            title: 'Service-Bilder verwalten',
-            changeImage: 'Bild ändern',
-            resetButton: 'Zurücksetzen'
-        },
-        teamManagement: {
-            title: 'Team verwalten',
-            currentTeam: 'Aktuelles Team',
-            addMemberTitle: 'Neues Teammitglied hinzufügen',
             form: {
-                name: 'Name',
-                role: 'Rolle',
-                imageFile: 'Bilddatei',
-                submit: 'Mitglied hinzufügen'
-            },
-            deleteButton: 'Löschen',
-            changeImage: 'Bild ändern'
+                imageFile: 'Bilddatei auswählen',
+                submit: 'Bild aktualisieren'
+            }
         },
         galleryManagement: {
             title: 'Galerieverwaltung',
@@ -255,18 +232,10 @@ export const content: AllContent = {
       },
       reviews: {
         title: 'What Our Customers Say',
-        addReviewTitle: 'Leave a Review',
-        form: {
-          name: 'Your Name',
-          review: 'Your Review',
-          rating: 'Your Rating',
-          submit: 'Submit Review',
-          success: 'Thank you for your review!'
-        },
         items: [
-          { quote: 'The move was perfectly organized and went incredibly fast. The team was very friendly and professional. Highly recommended!', author: 'Anna S.', rating: 5 },
-          { quote: 'Everything was top-notch from the first contact to the last box. Fair prices and great service. I would use them again anytime!', author: 'Markus T.', rating: 5 },
-          { quote: 'CU Removals handled our office move over the weekend flawlessly. Everything went according to plan. Thank you!', author: 'Global Tech Ltd.', rating: 4 },
+          { quote: 'The move was perfectly organized and went incredibly fast. The team was very friendly and professional. Highly recommended!', author: 'Anna S.' },
+          { quote: 'Everything was top-notch from the first contact to the last box. Fair prices and great service. I would use them again anytime!', author: 'Markus T.' },
+          { quote: 'CU Removals handled our office move over the weekend flawlessly. Everything went according to plan. Thank you!', author: 'Global Tech Ltd.' },
         ],
       },
       gallery: {
@@ -299,18 +268,18 @@ export const content: AllContent = {
       ],
       teamTitle: 'Our Team',
       teamMembers: [
-        { key: 'ivan-curcic', name: 'Ivan Curcic', role: 'Founder & CEO', src: 'https://picsum.photos/200/200?image=20' },
-        { key: 'team', name: 'Team of Professionals', role: 'Experienced Movers', src: 'https://picsum.photos/200/200?image=21' },
+        { name: 'Ivan Curcic', role: 'Founder & CEO' },
+        { name: 'Team of Professionals', role: 'Experienced Movers' },
       ],
     },
     services: {
       title: 'Our Services',
       intro: 'We offer a comprehensive range of moving services tailored to your individual needs. Whether it\'s a small private move or a large corporate relocation, we have the right solution for you.',
       services: [
-        { key: 'private', title: 'Private Moves', description: 'We take care of the entire move of your apartment or house. From planning and packing to assembling your furniture at the destination.', features: ['Free on-site survey & quote', 'Packing and unpacking service', 'Furniture disassembly and assembly', 'Kitchen fitting'] },
-        { key: 'business', title: 'Business Moves', description: 'Efficient and professional relocations for offices and companies of all sizes. We minimize downtime so your business can continue to run smoothly.', features: ['Detailed move planning', 'IT and archive transport', 'Furniture disposal', 'Weekend and night moves'] },
-        { key: 'transport', title: 'Furniture Transport & Part Loads', description: 'Do you only have a few pieces of furniture to transport? No problem! We offer cost-effective solutions for single-item transports and part loads.', features: ['Safe transport of single items', 'Flexible scheduling', 'Insured transport', 'Germany & Europe-wide'] },
-        { key: 'disposal', title: 'Clearance & Disposal', description: 'We create space! Professional clearance of basements, attics, or entire apartments with proper disposal.', features: ['Broom-clean handover', 'Valuation of items possible', 'Environmentally friendly disposal', 'Discreet and reliable'] },
+        { title: 'Private Moves', description: 'We take care of the entire move of your apartment or house. From planning and packing to assembling your furniture at the destination.', features: ['Free on-site survey & quote', 'Packing and unpacking service', 'Furniture disassembly and assembly', 'Kitchen fitting'] },
+        { title: 'Business Moves', description: 'Efficient and professional relocations for offices and companies of all sizes. We minimize downtime so your business can continue to run smoothly.', features: ['Detailed move planning', 'IT and archive transport', 'Furniture disposal', 'Weekend and night moves'] },
+        { title: 'Furniture Transport & Part Loads', description: 'Do you only have a few pieces of furniture to transport? No problem! We offer cost-effective solutions for single-item transports and part loads.', features: ['Safe transport of single items', 'Flexible scheduling', 'Insured transport', 'Germany & Europe-wide'] },
+        { title: 'Clearance & Disposal', description: 'We create space! Professional clearance of basements, attics, or entire apartments with proper disposal.', features: ['Broom-clean handover', 'Valuation of items possible', 'Environmentally friendly disposal', 'Discreet and reliable'] },
       ],
     },
     gallery: {
@@ -330,7 +299,7 @@ export const content: AllContent = {
     },
     contact: {
       title: 'Contact Us',
-      description: 'Do you have questions or would you like a free quote? Contact us directly using the details below or give us a call. We are here for you!',
+      description: 'Do you have questions or would you like a free quote? Fill out the form or give us a call. We are here for you!',
       form: {
         name: 'Your Name',
         email: 'Your Email',
@@ -370,7 +339,7 @@ export const content: AllContent = {
         phone: '+49 123 456 7890',
         email: 'info@cu-umzuege.de',
       },
-      copyright: '© 2025 CU Removals and Transport. All rights reserved.',
+      copyright: '© 2024 CU Removals and Transport. All rights reserved.',
     },
     login: {
       title: 'Admin Login',
@@ -386,27 +355,12 @@ export const content: AllContent = {
         title: 'Admin Dashboard',
         heroManagement: {
             title: 'Hero Image Management',
+            uploadTitle: 'Upload New Hero Image',
             currentImageTitle: 'Current Image',
-            resetButton: 'Reset to Default',
-            changeImage: 'Change Image'
-        },
-        serviceImageManagement: {
-            title: 'Service Image Management',
-            changeImage: 'Change Image',
-            resetButton: 'Reset'
-        },
-        teamManagement: {
-            title: 'Team Management',
-            currentTeam: 'Current Team',
-            addMemberTitle: 'Add New Team Member',
             form: {
-                name: 'Name',
-                role: 'Role',
-                imageFile: 'Image File',
-                submit: 'Add Member'
-            },
-            deleteButton: 'Delete',
-            changeImage: 'Change Image'
+                imageFile: 'Select Image File',
+                submit: 'Update Image'
+            }
         },
         galleryManagement: {
             title: 'Gallery Management',

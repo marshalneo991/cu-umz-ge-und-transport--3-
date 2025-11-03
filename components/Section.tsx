@@ -8,13 +8,13 @@ export const useAnimateOnScroll = <T extends HTMLElement>() => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // This will be true when the element is intersecting, and false otherwise.
-        // This makes the animation work both ways (in and out).
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
       },
       {
-        // Trigger when 10% of the element is visible on screen for a responsive feel.
-        threshold: 0.1,
+        threshold: 0.15, // Trigger when 15% of the element is visible
       }
     );
 
@@ -24,12 +24,11 @@ export const useAnimateOnScroll = <T extends HTMLElement>() => {
     }
 
     return () => {
-      // Clean up the observer when the component unmounts.
       if (currentElement) {
         observer.unobserve(currentElement);
       }
     };
-  }, []); // Empty dependency array ensures this effect runs only once on mount.
+  }, []);
 
   return [ref, isVisible] as const;
 };
